@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  --color-offwhite: #F9F9F9;
+  --color-primary: #1925AA;
+  --color-gray: #404040;
+  --color-gray2: #BFC0C6;
+}
+
+.inter-tite {
+  font-family: "Inter Tight", sans-serif;
+}
+
+.anton {
+  font-family: "Anton", sans-serif;
+}
+
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1535px;
+  width: 100%;
+  margin: auto;
+  padding-inline: 20px;
+}
+
+@media (max-width:640px) {
+  .container {
+    padding-inline: 16px;
+  }
+}
+
+
+
+@layer base {
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.section-padding {
+  padding-block: 136px;
+}
+
+@media (max-width:1024px) {
+  .section-padding {
+    padding-block: 100px;
+  }
+}
+
+@media (max-width:640px) {
+  .section-padding {
+    padding-block: 60px;
+  }
+}
+
+
+
+/* =========================
+   CSS RESET / BASE
+========================= */
+
+/* Box sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin & padding */
+
+/* HTML & body */
+body {
+  height: 100%;
+  font-family: "Inter Tight", sans-serif;
+}
+
+
+
+/* Remove link underline */
+a {
+  text-decoration: none;
+}
+
+/* Images responsive */
+img,
+picture,
+video,
+canvas {
+  max-width: 100%;
+  display: block;
+}
+
+/* Form elements inherit font */
+
+
+/* Button cursor */
+button {
+  cursor: pointer;
+}
+
+/* Table reset */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* smooth scrooll */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+
+
+
+/*  banner start */
+    /* ── HERO TITLE ── */
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.92;
+      letter-spacing: -1px;
+    }
+
+    /* ── BUTTON ── */
+    .btn-main {
+      background: #1a1a1a;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      padding: 14px 36px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .btn-main:hover { background: var(--red); transform: scale(1.04); }
+
+    /* ── SLIDER SECTION ── */
+    .slider-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* Fade edges */
+    .slider-wrapper::before,
+    .slider-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 140px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .slider-wrapper::before { left: 0;  background: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 90.14%); }
+    .slider-wrapper::after  { right: 0; background: linear-gradient(270deg, #FFF 0%, rgba(255, 255, 255, 0.00) 90.14%); }
+
+    /* Marquee track */
+    .marquee-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* Slide cards */
+    .slide-card {
+      flex-shrink: 0;
+      width: 440px;
+      height: 300px;
+      border-radius: 16px;
+      background: #e0e0de;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .slide-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.14);
+    }
+    .slide-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── CENTER PORTRAIT ── */
+    .portrait-ring {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+    }
+
+    /* ── RESPONSIVE: hide center portrait on mobile ── */
+    @media (max-width: 767px) {
+      .slider-wrapper::before,
+      .slider-wrapper::after { width: 60px; }
+      .slide-card { width: 180px; height: 120px; }
+    }
+/*  banner end */
