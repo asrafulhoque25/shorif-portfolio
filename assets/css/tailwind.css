@@ -5,7 +5,7 @@
 
 @theme {
   --color-offwhite: #F9F9F9;
-  --color-primary: #1925AA;
+  --color-primary: #DE4A33;
   --color-gray: #404040;
   --color-gray2: #BFC0C6;
 }
@@ -154,33 +154,7 @@ html.lenis body {
 
 
 /*  banner start */
-    /* ── HERO TITLE ── */
-    .hero-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900;
-      text-transform: uppercase;
-      line-height: 0.92;
-      letter-spacing: -1px;
-    }
 
-    /* ── BUTTON ── */
-    .btn-main {
-      background: #1a1a1a;
-      color: #fff;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      padding: 14px 36px;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      transition: background 0.25s, transform 0.2s;
-      display: inline-block;
-      text-decoration: none;
-    }
-    .btn-main:hover { background: var(--red); transform: scale(1.04); }
 
     /* ── SLIDER SECTION ── */
     .slider-wrapper {
@@ -230,7 +204,6 @@ html.lenis body {
     }
     .slide-card:hover {
       transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 12px 36px rgba(0,0,0,0.14);
     }
     .slide-card img {
       width: 100%; height: 100%;
@@ -238,11 +211,7 @@ html.lenis body {
     }
 
     /* ── CENTER PORTRAIT ── */
-    .portrait-ring {
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.18);
-    }
+
 
     /* ── RESPONSIVE: hide center portrait on mobile ── */
     @media (max-width: 767px) {
@@ -250,4 +219,75 @@ html.lenis body {
       .slider-wrapper::after { width: 60px; }
       .slide-card { width: 180px; height: 120px; }
     }
+
+
+
+     /* ── BUTTON ── */
+    .btn-slide {
+      position: relative;
+      overflow: hidden;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 15px 33px;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      outline: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+
+      /* smooth box-shadow on hover */
+      transition: box-shadow 0.3s ease;
+    }
+
+    .btn-slide:hover {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Default label */
+    .btn-slide__label {
+      position: relative;
+      z-index: 1;
+      display: block;
+      transition: color 0.01s;
+    }
+
+    /* Red overlay that slides up */
+    .btn-slide__overlay {
+      position: absolute;
+      inset: 0;
+      background: #E8341A;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #fff;
+      /* starts hidden below */
+      transform: translateY(110%);
+      z-index: 2;
+    }
 /*  banner end */
+
+
+
+
+/*  work start */
+
+  
+    .project-img { width: 100%; height: 100%; object-fit: cover; border-radius: 16px; display: block; }
+    .view-link { font-weight: 500; color: #000; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; border-bottom: 1px solid #111; padding-bottom: 2px; transition: gap 0.2s; }
+    .view-link:hover { gap: 10px; color: #E8341A; border-color: #E8341A; }
+    .view-link:hover img { 
+        filter: brightness(0) saturate(100%) 
+          invert(33%) sepia(92%) saturate(1500%) 
+          hue-rotate(345deg) brightness(95%) contrast(95%);
+     }
+/*  work end */
