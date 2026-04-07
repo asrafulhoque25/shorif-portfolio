@@ -59,72 +59,76 @@ if (hamburger && mobileMenu) {
  
  
  // ── Button animation using GSAP ──
- 
- const btn     = document.getElementById('myBtn');
-    const overlay = btn.querySelector('.btn-slide__overlay');
-    const label   = btn.querySelector('.btn-slide__label');
+ // সব .btn-slide এ একসাথে কাজ করবে
+document.querySelectorAll('.btn-slide').forEach(btn => {
+  const overlay = btn.querySelector('.btn-slide__overlay');
 
-    /* ── HOVER IN: slide overlay up ── */
-    btn.addEventListener('mouseenter', () => {
-      gsap.to(overlay, {
-        y: '0%',
-        duration: 0.42,
-        ease: 'power3.out'
-      });
-      /* subtle scale on the whole button */
-      gsap.to(btn, {
-        scale: 1.05,
-        duration: 0.35,
-        ease: 'back.out(2)'
-      });
-    });
+  btn.addEventListener('mouseenter', () => {
+    gsap.to(overlay, { y: '0%', duration: 0.42, ease: 'power3.out' });
+    gsap.to(btn, { scale: 1.05, duration: 0.35, ease: 'back.out(2)' });
+  });
 
-    /* ── HOVER OUT: slide overlay back down ── */
-    btn.addEventListener('mouseleave', () => {
-      gsap.to(overlay, {
-        y: '110%',
-        duration: 0.4,
-        ease: 'power3.inOut'
-      });
-      gsap.to(btn, {
-        scale: 1,
-        duration: 0.45,
-        ease: 'elastic.out(1, 0.6)'
-      });
-    });
+  btn.addEventListener('mouseleave', () => {
+    gsap.to(overlay, { y: '110%', duration: 0.4, ease: 'power3.inOut' });
+    gsap.to(btn, { scale: 1, duration: 0.45, ease: 'elastic.out(1, 0.6)' });
+  });
 
-    /* ── CLICK: elastic bounce feedback ── */
-    btn.addEventListener('click', () => {
-      gsap.timeline()
-        .to(btn, { scale: 0.93, duration: 0.1, ease: 'power2.in' })
-        .to(btn, { scale: 1.05, duration: 0.55, ease: 'elastic.out(1, 0.5)' })
-        .to(btn, { scale: 1,    duration: 0.3,  ease: 'power2.out' });
-    });
+  btn.addEventListener('click', () => {
+    gsap.timeline()
+      .to(btn, { scale: 0.93, duration: 0.1, ease: 'power2.in' })
+      .to(btn, { scale: 1.05, duration: 0.55, ease: 'elastic.out(1, 0.5)' })
+      .to(btn, { scale: 1,    duration: 0.3,  ease: 'power2.out' });
+  });
+});
 
-    /* ── PAGE LOAD REVEAL ── */
-    gsap.fromTo(btn,
-      {
-        opacity: 0,
-        scaleX: 0.4,
-        scaleY: 0.6,
-        transformOrigin: 'center center'
-      },
-      {
-        opacity: 1,
-        scaleX: 1,
-        scaleY: 1,
-        duration: 0.9,
-        ease: 'elastic.out(1, 0.55)',
-        delay: 0.3
-      }
-    );
-
+// Page load reveal — সব button এ stagger দিয়ে
+gsap.fromTo('.btn-slide',
+  { opacity: 0, scaleX: 0.4, scaleY: 0.6, transformOrigin: 'center center' },
+  { opacity: 1, scaleX: 1, scaleY: 1, duration: 0.9, ease: 'elastic.out(1, 0.55)', delay: 0.3, stagger: 0.1 }
+);
 
 
 
 
 
     
+// ── process number animation ──
+
+
+document.querySelectorAll('.svc-row').forEach(row => {
+  const numReveal = row.querySelector('.svc-num-reveal');
+  const nameReveal = row.querySelector('.svc-name-reveal');
+
+  row.addEventListener('mouseenter', () => {
+    gsap.killTweensOf([numReveal, nameReveal]);
+    gsap.to([numReveal, nameReveal], {
+      clipPath: 'inset(0 0% 0 0)',
+      duration: 0.88,
+      ease: 'power3.out'
+    });
+  });
+
+  row.addEventListener('mouseleave', () => {
+    gsap.killTweensOf([numReveal, nameReveal]);
+    gsap.to([numReveal, nameReveal], {
+      clipPath: 'inset(0 100% 0 0)',
+      duration: 0.6,
+      ease: 'power2.in'
+    });
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
 // ── Smooth scroll (Lenis) ──
 if (typeof Lenis !== 'undefined') {
   const lenis = new Lenis({
@@ -147,3 +151,6 @@ if (typeof Lenis !== 'undefined') {
 
   gsap.ticker.lagSmoothing(0);
 }
+
+
+
