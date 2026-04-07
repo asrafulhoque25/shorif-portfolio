@@ -20,7 +20,7 @@
 
                 <a href="/" class="flex items-center gap-[10px] shrink-0">
                     <img src="assets/images/shorif.png" alt="book-demo" class="img-fluid">
-                    <span class="text-xl lg:text-2xl text-gray font-semibold">Shorif Ahammed</span>
+                    <span class="sm:text-xl text-lg lg:text-2xl text-gray font-semibold">Shorif Ahammed</span>
                 </a>
 
 
@@ -43,16 +43,16 @@
                         aria-label="Toggle menu">
                         <span
                             class="ham-top absolute block w-6 h-[1.5px] bg-black transition-all duration-300 -translate-y-[7px]"></span>
-                        <span class="ham-mid absolute block w-6 h-[1.5px] bg-white transition-all duration-300"></span>
+                        <span class="ham-mid absolute block w-6 h-[1.5px] bg-black transition-all duration-300"></span>
                         <span
-                            class="ham-bot absolute block w-4 h-[1.5px] bg-white transition-all duration-300 translate-y-[7px]"></span>
+                            class="ham-bot absolute block w-4 h-[1.5px] bg-black transition-all duration-300 translate-y-[7px]"></span>
                     </button>
                 </div>
             </div>
         </div>
 
         <div id="mobile-menu"
-            class="md:hidden absolute top-full left-0 w-full overflow-hidden max-h-0 transition-all duration-500 ease-in-out bg-[#000323]/95 backdrop-blur-lg">
+            class="md:hidden absolute top-full left-0 w-full overflow-hidden max-h-0 transition-all duration-500 ease-in-out bg-[#fff]/95 backdrop-blur-lg">
             <div class="container py-6 flex flex-col lg:gap-5 sm:gap-2.5 gap-1 border-t border-white/10">
                 <a href="index.html#about"
                     class="text-[18px] text-gray hover:text-[#B2B3BD] transition-colors duration-200">About</a>
@@ -74,19 +74,19 @@
        HERO SECTION
   ════════════════════════════════ -->
     <section
-        class="relative min-h-screen flex flex-col items-center justify-start pt-24 pb-0 overflow-hidden pt-[200px] pb-[130px]">
+        class="relative min-h-screen flex flex-col items-center justify-start sm:pt-30 pt-27 sm:pb-20 pb-18 overflow-hidden md:pt-[200px] md:pb-[130px]">
 
         <!-- Top text block -->
-        <div class="text-center px-4 z-10 max-w-232 w-full mx-auto pb-[150px]">
+        <div class="text-center px-4 z-10 max-w-232 w-full mx-auto sm:pb-[110px] pb-20 md:pb-[150px]">
 
             <!-- Title -->
-            <h1 class="hero-title mb-4 text-[90px] font-black leading-[1.1]">
+            <h1 class="hero-title mb-4 lg:text-[90px] md:text-[60px] sm:text-[48px] text-[36px] font-black leading-[1.1]">
                 <span class="uppercase text-[#DE4A33]">Crafting</span>
                 <span class="uppercase text-gray">Digital Experiences</span>
             </h1>
 
             <!-- tag lg:py-3 py-2 lg:px-6 px-4 border border-[#CECECE] rounded-[8px] lg:text-2xl sm:text-lg text-baseline -->
-            <p class="text-gray text-xl md:text-2xl mb-8 mt-4">
+            <p class="text-gray text-xl md:text-2xl sm:mb-8 mb-6 mt-4">
                 Where refined aesthetics meet purposeful design
             </p>
 
@@ -98,11 +98,12 @@
         </div>
 
         <!-- ── SLIDER + PORTRAIT BLOCK ── -->
+
         <div class="relative w-full" id="work">
 
             <!-- Center portrait (absolute, above marquee) -->
             <div
-                class="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 max-w-[440px] w-full mx-auto h-[490px]">
+                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 sm:max-w-[440px] max-w-[295px] w-full mx-auto h-[344px] sm:h-[490px]">
                 <div class="portrait-ring w-full h-full">
                     <!-- Replace src with your actual photo -->
                     <img src="assets/images/shorifbanner.webp" alt="shorif ahammed" />
@@ -175,12 +176,12 @@
     <section class="about-me section-padding bg-[#EAE9E1]" id="about">
         <div class="container">
             <h2
-                class="section-title uppercase text-center text-2xl sm:text-[28px] md:text-[32px] lg:text-[48px] leading-[113%] font-bold text-gray lg:mb-12 md:mb-8 mb-6">
+                class="section-title uppercase text-center text-[28px] md:text-[32px] lg:text-[48px] leading-[113%] font-bold text-gray lg:mb-12 md:mb-8 mb-6">
                 <span class="text-primary">I believe that exceptional design emerges from the intersection of
                     meticulous</span> attention and a deep understanding of human behavior.
             </h2>
             <div class="text-center text-gray text-lg ">
-                <p class="text-gray lg:text-2xl text-xl max-w-[1200px] w-full mx-auto">
+                <p class="text-gray lg:text-2xl sm:text-xl text-lg max-w-[1200px] w-full mx-auto">
                     My approach combines timeless aesthetic principles with contemporary digital innovation, creating
                     experiences that resonate on both emotional and functional levels. Through careful research,
                     iterative refinement, and commitment to excellence, I transform complex challenges into elegant
@@ -200,7 +201,7 @@
         <div class="container">
             <!-- Section Title -->
             <h2
-                class="title-font md:text-[64px] sm:text-[48px] text-[32px] uppercase md:mb-24 sm:mb-16 mb-10 font-black">
+                class="title-font md:text-[64px] sm:text-[48px] text-[32px] uppercase md:mb-24 sm:mb-12 mb-6 font-black">
                 <span style="color:#E8341A">Selected</span>
                 <span style="color:#1a1a1a"> Works</span>
             </h2>
@@ -219,7 +220,7 @@
                     <div class="flex flex-col lg:gap-5 sm:gap-2.5 gap-1">
                         <div class="md:space-y-6 space-y-4">
                             <h3
-                                class="lg:text-[40px] md:text-[36px] sm:text-[28px] text-2xl font-semibold text-black leading-[110%]">
+                                class="lg:text-[40px] md:text-[36px] text-[28px]  font-semibold text-black leading-[110%]">
                                 BankerPro – Fintech Admin Dashboard
                             </h3>
                             <p class="text-[#404040] lg:text-2xl sm:text-lg text-base  ">
@@ -257,7 +258,7 @@
                     <div class="flex flex-col lg:gap-5 sm:gap-2.5 gap-1">
                         <div class="md:space-y-6 space-y-4">
                             <h3
-                                class="lg:text-[40px] md:text-[36px] sm:text-[28px] text-2xl font-semibold text-black leading-[110%]">
+                                class="lg:text-[40px] md:text-[36px] text-[28px]  font-semibold text-black leading-[110%]">
                                 BankerPro – Fintech Admin Dashboard
                             </h3>
                             <p class="text-[#404040] lg:text-2xl sm:text-lg text-base  ">
@@ -295,7 +296,7 @@
                     <div class="flex flex-col lg:gap-5 sm:gap-2.5 gap-1">
                         <div class="md:space-y-6 space-y-4">
                             <h3
-                                class="lg:text-[40px] md:text-[36px] sm:text-[28px] text-2xl font-semibold text-black leading-[110%]">
+                                class="lg:text-[40px] md:text-[36px] text-[28px]  font-semibold text-black leading-[110%]">
                                 BankerPro – Fintech Admin Dashboard
                             </h3>
                             <p class="text-[#404040] lg:text-2xl sm:text-lg text-base  ">
@@ -333,7 +334,7 @@
     <!-- Design Philosophy start  -->
     <section class="design-philosophy section-padding bg-[#EAE9E1]">
         <div class="container">
-            <div class="grid grid-cols-2 gap-10">
+            <div class="grid md:grid-cols-2 gap-10">
                 <div>
                     <!-- Section Title -->
                     <h2
@@ -356,11 +357,11 @@
                     </div>
                 </div>
                 <div class="lg:space-y-30.5 md:space-y-20 sm:space-y-15 space-y-8">
-                    <div class=" pl-10 border-l border-[#C7C7C7]">
+                    <div class=" md:pl-10 sm:pl-6 sm:border-l sm:border-[#C7C7C7]">
                         <h3 class="lg:text-[40px] sm:text-[32px] text-[28px] font-semibold md:mb-8 mb-6">Methodology
                         </h3>
                         <div>
-                            <ul class="space-y-6">
+                            <ul class="sm:space-y-6 space-y-4">
                                 <li>
                                     <p class="text-[#3B3A38] md:text-lg text-base"> <strong>Discovery &
                                             Research:</strong> Immersive stakeholder interviews and comprehensive user
@@ -388,11 +389,11 @@
                             </ul>
                         </div>
                     </div>
-                    <div class=" pl-10 border-l border-[#C7C7C7]">
+                    <div class=" md:pl-10 sm:pl-6 sm:border-l sm:border-[#C7C7C7]">
                         <h3 class="lg:text-[40px] sm:text-[32px] text-[28px] font-semibold md:mb-8 mb-6">Core Principles
                         </h3>
                         <div>
-                            <ul class="space-y-6">
+                            <ul class="sm:space-y-6 space-y-4">
                                 <li>
                                     <p class="text-[#3B3A38] md:text-lg text-base"> Clarity over
                                 </li>
@@ -503,9 +504,9 @@
     <!-- The Process start -->
     <section class="bg-[#EAE9E1] section-padding">
         <div class="container">
-            <div class="flex items-center justify-between gap-5">
+            <div class="flex items-center sm:flex-nowrap flex-wrap justify-between sm:gap-5 gap-3 sm:mb-2 mb-8">
                 <h2
-                    class="title-font md:text-[64px] text-start sm:text-[48px] text-[32px] uppercase md:mb-8 sm:mb-6 mb-4 font-black leading-[113%]">
+                    class="title-font md:text-[64px] text-start sm:text-[48px] text-[32px] uppercase md:mb-8 sm:mb-6 sm:mb-4 font-black leading-[113%]">
                     <span style="color:#E8341A">The</span>
                     <span style="color:#1a1a1a">Process</span>
                 </h2>
@@ -521,7 +522,7 @@
                 <li class="svc-row relative overflow-hidden cursor-pointer border-t border-[#C7C7C7] translate-y-1">
                     <!-- Content grid -->
                     <div class="relative z-[2] grid items-center gap-x-3 md:py-8 sm:py-6 py-4 px-3
-            grid-cols-[100px_1fr] 
+            grid-cols-[70px_1fr] 
             sm:grid-cols-[200px_1fr] 
             md:grid-cols-[300px_1fr]">
                         <div class="svc-num-wrap relative">
@@ -557,7 +558,7 @@
                 <li class="svc-row relative overflow-hidden cursor-pointer border-t border-[#C7C7C7] translate-y-1">
                     <!-- Content grid -->
                     <div class="relative z-[2] grid items-center gap-x-3 md:py-8 sm:py-6 py-4 px-3
-            grid-cols-[100px_1fr] 
+            grid-cols-[70px_1fr] 
             sm:grid-cols-[200px_1fr] 
             md:grid-cols-[300px_1fr]">
                         <div class="svc-num-wrap relative">
@@ -593,7 +594,7 @@
                 <li class="svc-row relative overflow-hidden cursor-pointer border-t border-[#C7C7C7] translate-y-1">
                     <!-- Content grid -->
                     <div class="relative z-[2] grid items-center gap-x-3 md:py-8 sm:py-6 py-4 px-3
-            grid-cols-[100px_1fr] 
+            grid-cols-[70px_1fr] 
             sm:grid-cols-[200px_1fr] 
             md:grid-cols-[300px_1fr]">
                         <div class="svc-num-wrap relative">
@@ -628,7 +629,7 @@
                 <li class="svc-row relative overflow-hidden cursor-pointer border-t border-[#C7C7C7] translate-y-1">
                     <!-- Content grid -->
                     <div class="relative z-[2] grid items-center gap-x-3 md:py-8 sm:py-6 py-4 px-3
-            grid-cols-[100px_1fr] 
+            grid-cols-[70px_1fr] 
             sm:grid-cols-[200px_1fr] 
             md:grid-cols-[300px_1fr]">
                         <div class="svc-num-wrap relative">
@@ -663,7 +664,7 @@
                 <li class="svc-row relative overflow-hidden cursor-pointer border-t border-[#C7C7C7] translate-y-1">
                     <!-- Content grid -->
                     <div class="relative z-[2] grid items-center gap-x-3 md:py-8 sm:py-6 py-4 px-3
-            grid-cols-[100px_1fr] 
+            grid-cols-[70px_1fr] 
             sm:grid-cols-[200px_1fr] 
             md:grid-cols-[300px_1fr]">
                         <div class="svc-num-wrap relative">
@@ -1153,7 +1154,7 @@
     <section class="cta section-padding bg-[#EAE9E1]">
         <div class="container">
             <div class="max-w-275.5 mx-auto">
-                <h2 class="cta-title mb-4 text-[64px] font-black leading-[1.1] text-center">
+                <h2 class="cta-title mb-4 lg:text-[64px] md:text-[52px] sm:text-[42px] text-[36px] font-black text-center leading-tight">
                 <span class="uppercase text-[#DE4A33]">Let's Create</span>
                 <span class="uppercase text-gray">Something 
 Extraordinary</span>
@@ -1167,14 +1168,117 @@ strategic design guidance, I'd love to explore how we can work together.</p>
                     <!-- Outlined -->
                      <!-- CTA -->
          <button class="btn-slide">
-  <span class="btn-slide__label">SEE MY WORK</span>
-  <span class="btn-slide__overlay">SEE MY WORK</span>
+  <span class="btn-slide__label">hello@sharifahmed.com</span>
+  <span class="btn-slide__overlay">hello@sharifahmed.com</span>
 </button>
                 </div>
             </div>
         </div>
     </section>
     <!-- cta section end -->
+
+
+
+
+
+    <!-- footer section start -->
+<footer class="bg-black lg:pt-24 md:pt-15 pt-11 text-white">
+
+<div class="container">
+      <!-- Main Footer Content -->
+  <div class="lg:pb-12 sm:pb-10 pb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 lg:gap-8">
+
+      <!-- Brand Column -->
+      <div class="flex flex-col md:gap-8 gap-5">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-none  uppercase">
+          SHORIF<br />AHAMMED
+        </h2>
+
+        <!-- Social Icons -->
+        <div class="flex items-center gap-3">
+
+          <!-- LinkedIn -->
+          <a href="#" class="w-12 h-12 rounded-full  bg-[#262626] flex items-center justify-center hover:bg-[#545454] transition-all duration-300 group">
+           <img src="assets/images/social1.svg" class="img-fluid" alt="social link">
+         </a>
+
+          <!-- Dribbble -->
+          <a href="#" class="w-12 h-12 rounded-full bg-[#262626] flex items-center justify-center hover:bg-[#545454] transition-all duration-300 group">
+             <img src="assets/images/social2.svg" class="img-fluid" alt="social link">
+        </a>
+
+          <!-- Behance -->
+          <a href="#" class="w-12 h-12 rounded-full bg-[#262626] flex items-center justify-center hover:bg-[#545454] transition-all duration-300 group">
+             <img src="assets/images/social3.svg" class="img-fluid" alt="social link">
+          </a>
+
+          <!-- Instagram -->
+          <a href="#" class="w-12 h-12 rounded-full bg-[#262626] flex items-center justify-center hover:bg-[#545454] transition-all duration-300 group">
+           <img src="assets/images/social4.svg" class="img-fluid" alt="social link">
+
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Services Column -->
+      <div>
+        <h3 class="md:text-2xl sm:text-xl text-lg font-bold uppercase tracking-widest text-white sm:mb-6 mb-5">Services</h3>
+        <ul class="flex flex-col gap-4">
+          <li><a href="#" class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">UI Design</a></li>
+          <li><a href="#" class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">UX Research</a></li>
+          <li><a href="#" class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">Motion Design</a></li>
+          <li><a href="#" class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">Brand Strategy</a></li>
+          <li><a href="#" class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">Art Direction</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect Column -->
+      <div>
+        <h3 class="md:text-2xl sm:text-xl text-lg font-bold uppercase tracking-widest text-white sm:mb-6 mb-5">Connect</h3>
+        <ul class="flex flex-col gap-4">
+          <li><a href="#" class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">LinkedIn</a></li>
+          <li><a href="#" class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">Dribbble</a></li>
+          <li><a href="#" class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">Behance</a></li>
+          <li><a href="#" class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">Instagram</a></li>
+          <li><a href="#" class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">Twitter</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Column -->
+      <div>
+        <h3 class="md:text-2xl sm:text-xl text-lg font-bold uppercase tracking-widest text-white sm:mb-6 mb-5">Contact</h3>
+        <ul class="flex flex-col gap-4">
+          <li>
+            <a href="mailto:hello@sharifahammed.com" class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base break-all">
+              hello@sharifahammed.com
+            </a>
+          </li>
+          <li>
+            <a href="tel:+15551234567" class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">
+              +1 (555) 123-4567
+            </a>
+          </li>
+          <li>
+            <span class="text-white/60 text-sm">Brooklyn, NY</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Divider + Copyright -->
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+    <div class="border-t border-white/10 py-6">
+      <p class="text-center text-white/40 text-sm">© 2026 All Rights Reserved</p>
+    </div>
+  </div>
+</div>
+
+</footer>
+    <!-- footer section end -->
 
 
 

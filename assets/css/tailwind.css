@@ -54,13 +54,13 @@ html {
 
 @media (max-width:1024px) {
   .section-padding {
-    padding-block: 100px;
+    padding-block: 80px;
   }
 }
 
 @media (max-width:640px) {
   .section-padding {
-    padding-block: 60px;
+    padding-block: 48px;
   }
 }
 
@@ -217,7 +217,7 @@ html.lenis body {
     @media (max-width: 767px) {
       .slider-wrapper::before,
       .slider-wrapper::after { width: 60px; }
-      .slide-card { width: 180px; height: 120px; }
+      .slide-card { width: 295px; height: 200px; }
     }
 
 
@@ -244,6 +244,8 @@ html.lenis body {
       /* smooth box-shadow on hover */
       transition: box-shadow 0.3s ease;
     }
+
+
 
     .btn-slide:hover {
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
@@ -273,6 +275,14 @@ html.lenis body {
       /* starts hidden below */
       transform: translateY(110%);
       z-index: 2;
+    }
+        @media (max-width:640px) {
+          .btn-slide {
+      font-size: 14px;
+    }
+       .btn-slide__overlay {
+      font-size: 14px;
+    }
     }
 /*  banner end */
 
@@ -408,8 +418,8 @@ html.lenis body {
     }
 
     .tst-avatar {
-      width: 52px;
-      height: 52px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       flex-shrink: 0;
       display: flex;
@@ -444,3 +454,29 @@ color:#000;
       flex: 1;
     }
 
+
+    @media (max-width:640px) {
+      .tst-author {
+      gap: 8px;
+    }
+
+    .tst-avatar {
+      width: 52px;
+      height: 52px;
+      font-size: 16px;
+    }
+
+    .tst-name {
+ font-size: 16px;
+font-weight: 700;
+line-height: 20px; 
+    }
+
+    .tst-role {
+      font-size: 14px;
+    }
+
+    .tst-quote {
+      font-size: 16px;
+    }
+    }
