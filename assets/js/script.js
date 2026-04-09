@@ -1,65 +1,67 @@
+// ── Navbar scroll ──
 const navbar = document.getElementById('navbar');
 
 if (navbar) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
-            navbar.classList.add('backdrop-blur-md', 'bg-white/90', 'shadow-sm');
-            navbar.classList.remove('py-6', 'lg:py-10');
-            navbar.classList.add('py-4');
-        } else {
-            navbar.classList.remove('backdrop-blur-md', 'bg-white/90', 'shadow-sm');
-            navbar.classList.remove('py-4');
-            navbar.classList.add('py-6', 'lg:py-10');
-        }
-    });
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      navbar.classList.add('navbar--scrolled');
+    } else {
+      navbar.classList.remove('navbar--scrolled');
+    }
+  });
 }
 
+// ── Mobile menu toggle ──
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 
 if (hamburger && mobileMenu) {
-    const hamTop = hamburger.querySelector('.ham-top');
-    const hamMid = hamburger.querySelector('.ham-mid');
-    const hamBot = hamburger.querySelector('.ham-bot');
-    let menuOpen = false;
+  const hamTop = hamburger.querySelector('.ham-top');
+  const hamMid = hamburger.querySelector('.ham-mid');
+  const hamBot = hamburger.querySelector('.ham-bot');
+  let menuOpen = false;
 
-    const toggleMenu = () => {
-        menuOpen = !menuOpen;
-        if (menuOpen) {
-            mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-            hamTop.style.transform = 'translateY(7px) rotate(45deg)';
-            hamMid.style.opacity = '0';
-            hamMid.style.transform = 'scaleX(0)';
-            hamBot.style.width = '24px';
-            hamBot.style.transform = 'translateY(-7px) rotate(-45deg)';
-            navbar.classList.add('bg-white');
-        } else {
-            mobileMenu.style.maxHeight = '0';
-            hamTop.style.transform = '';
-            hamMid.style.opacity = '';
-            hamMid.style.transform = '';
-            hamBot.style.width = '';
-            hamBot.style.transform = '';
-            if (window.scrollY <= 20) {
-                navbar.classList.remove('bg-white');
-            }
-        }
-    };
+  const toggleMenu = () => {
+    menuOpen = !menuOpen;
 
-    hamburger.addEventListener('click', toggleMenu);
+    if (menuOpen) {
+      // Open menu
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+      navbar.classList.add('navbar--menu-open');
 
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (menuOpen) toggleMenu();
-        });
+      // Hamburger → X
+      hamTop.style.transform = 'translateY(0px) rotate(45deg)';
+      hamMid.style.opacity = '0';
+      hamMid.style.transform = 'scaleX(0)';
+      hamBot.style.width = '24px';
+      hamBot.style.transform = 'translateY(0px) rotate(-45deg)';
+    } else {
+      // Close menu
+      mobileMenu.style.maxHeight = '0';
+      navbar.classList.remove('navbar--menu-open');
+
+      // Reset hamburger bars
+      hamTop.style.transform = '';
+      hamMid.style.opacity = '';
+      hamMid.style.transform = '';
+      hamBot.style.width = '';
+      hamBot.style.transform = '';
+    }
+  };
+
+  hamburger.addEventListener('click', toggleMenu);
+
+  // Close on link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (menuOpen) toggleMenu();
     });
+  });
 }
  
  
  
- 
- // ── Button animation using GSAP ──
- // সব .btn-slide এ একসাথে কাজ করবে
+ // ── Button animation ──
 document.querySelectorAll('.btn-slide').forEach(btn => {
   const overlay = btn.querySelector('.btn-slide__overlay');
 
@@ -81,7 +83,7 @@ document.querySelectorAll('.btn-slide').forEach(btn => {
   });
 });
 
-// Page load reveal — সব button এ stagger দিয়ে
+
 gsap.fromTo('.btn-slide',
   { opacity: 0, scaleX: 0.4, scaleY: 0.6, transformOrigin: 'center center' },
   { opacity: 1, scaleX: 1, scaleY: 1, duration: 0.9, ease: 'elastic.out(1, 0.55)', delay: 0.3, stagger: 0.1 }
@@ -256,10 +258,10 @@ setTimeout(runSequence, 600);
     });
   }
 
-  // Cards initially hidden
+
   gsap.set([card1, card2, card3], { opacity: 0, y: 60 });
 
-  // Ring spin — page load থেকেই চলবে
+
   gsap.to(svg, {
       rotation: 360,
   duration: 8,
@@ -268,10 +270,8 @@ setTimeout(runSequence, 600);
   transformOrigin: '50% 50%'
   });
 
-  // Ring inner breathe
 
 
-  // IntersectionObserver — scroll করে section এ আসলে trigger
   let triggered = false;
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -288,7 +288,7 @@ setTimeout(runSequence, 600);
           ease: 'power3.out'
         });
 
-        // Counter — cards reveal শেষ হওয়ার পর শুরু
+      
         gsap.delayedCall(0.4, () => {
           countUp(pctEl, 65, 2.0);
           countUp(customersEl, 12, 1.8);
@@ -296,7 +296,7 @@ setTimeout(runSequence, 600);
         });
       }
     });
-  }, { threshold: 0.25 }); // section এর 25% দেখা গেলে trigger
+  }, { threshold: 0.25 }); 
 
   observer.observe(resultSection);
 
@@ -314,6 +314,82 @@ setTimeout(runSequence, 600);
 
 
 
+
+
+
+
+
+//text animation
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.querySelectorAll('.swipe-reveal').forEach(el => {
+
+      // Read optional config from data attributes
+      const boxColor   = el.dataset.swipeColor || '#111';
+      const startPoint = el.dataset.swipeStart  || 'top 80%';
+
+      // Apply custom box color via CSS variable
+      el.style.setProperty('--swipe-color', boxColor);
+
+      // Inject the sweeping box element
+      const box = document.createElement('span');
+      box.classList.add('swipe-reveal__box');
+      el.prepend(box);
+
+      // Wrap the existing content in an inner text span
+      const inner = document.createElement('span');
+      inner.classList.add('swipe-reveal__text');
+      while (el.childNodes.length > 1) {
+        inner.appendChild(el.childNodes[1]);
+      }
+      el.appendChild(inner);
+
+      // Detect optional .swipe-subtitle on the next sibling
+      const subtitle = el.nextElementSibling?.classList.contains('swipe-subtitle')
+        ? el.nextElementSibling
+        : null;
+
+      // Build the GSAP timeline
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: startPoint,
+          toggleActions: 'play none none none',
+        }
+      });
+
+      // Step 1 — box sweeps in from left
+      tl.to(box, {
+        width: '100%',
+        duration: 0.45,
+        ease: 'power2.inOut',
+      });
+
+      // Step 2 — text becomes visible (still hidden behind box)
+      tl.to(inner, {
+        opacity: 1,
+        duration: 0.01,
+      }, '>-0.05');
+
+      // Step 3 — box exits to the right, revealing the text
+      tl.to(box, {
+        left: '100%',
+        duration: 0.4,
+        ease: 'power2.inOut',
+      });
+
+      // Step 4 — subtitle fades up (optional)
+      if (subtitle) {
+        tl.to(subtitle, {
+          opacity: 1,
+          y: 0,
+          duration: 0.4,
+          ease: 'power2.out',
+        }, '-=0.1');
+      }
+
+    });
 
 
 // ── Smooth scroll (Lenis) ──

@@ -11,59 +11,58 @@
 
 <body>
 
-    <!-- ═══════════════════════════
-       NAVBAR
-  ═══════════════════════════ -->
-    <nav id="navbar" class="py-6 lg:py-8 fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300">
+<!-- navbar start -->
+<nav id="navbar">
+    <div class="container">
+        <div class="navbar-inner">
+
+            <!-- Logo -->
+            <a href="/" class="navbar-logo">
+                <img src="assets/images/shorif.png" alt="Shorif Ahammed">
+                <span>Shorif Ahammed</span>
+            </a>
+
+            <!-- Right: Nav links + Hamburger -->
+            <div class="navbar-actions">
+
+                <!-- Desktop Nav Links -->
+                <ul class="navbar-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="/case-study.html">Work</a></li>
+                    <li><a href="#">Download CV</a></li>
+                </ul>
+
+                <!-- Hamburger -->
+                <button id="hamburger" aria-label="Toggle menu">
+                    <span class="ham-top"></span>
+                    <span class="ham-mid"></span>
+                    <span class="ham-bot"></span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu">
         <div class="container">
-            <div class="flex items-center justify-between gap-5">
-
-                <a href="/" class="flex items-center gap-[10px] shrink-0">
-                    <img src="assets/images/shorif.png" alt="book-demo" class="img-fluid">
-                    <span class="sm:text-xl text-lg lg:text-2xl text-gray font-semibold">Shorif Ahammed</span>
-                </a>
-
-
-
-                <div class="flex items-center gap-4">
-                    <ul class="hidden md:flex items-center gap-8">
-                        <li><a href="index.html#about"
-                                class="text-base lg:text-[18px] text-gray hover:text-primary uppercase transition-colors duration-200">About</a>
-                        </li>
-                        <li><a href="/case-study.html"
-                                class="text-base lg:text-[18px] text-gray hover:text-primary uppercase transition-colors duration-200">Work</a>
-                        </li>
-                        <li><a href="#"
-                                class="text-base lg:text-[18px] text-gray hover:text-primary uppercase transition-colors duration-200">
-                                Download CV</a></li>
-                    </ul>
-
-                    <button id="hamburger"
-                        class="md:hidden relative flex flex-col justify-center items-center w-8 h-8 focus:outline-none"
-                        aria-label="Toggle menu">
-                        <span
-                            class="ham-top absolute block w-6 h-[1.5px] bg-black transition-all duration-300 -translate-y-[7px]"></span>
-                        <span class="ham-mid absolute block w-6 h-[1.5px] bg-black transition-all duration-300"></span>
-                        <span
-                            class="ham-bot absolute block w-4 h-[1.5px] bg-black transition-all duration-300 translate-y-[7px]"></span>
-                    </button>
-                </div>
+            <div class="mobile-menu-inner">
+                <ul>
+                    <li>
+                        <a href="index.html#about">About</a>
+                    </li>
+                    <li>
+                <a href="/case-study.html">Work</a>
+                    </li>
+                    <li>
+                <a href="#">Download CV</a>
+                    </li>
+                </ul>
             </div>
         </div>
-
-        <div id="mobile-menu"
-            class="md:hidden absolute top-full left-0 w-full overflow-hidden max-h-0 transition-all duration-500 ease-in-out bg-[#fff]/95 backdrop-blur-lg">
-            <div class="container px-6 pb-6 flex flex-col lg:gap-5 sm:gap-2.5 gap-1 border-t border-white/10">
-                <a href="index.html#about"
-                    class="text-[18px] text-gray hover:text-[#B2B3BD] transition-colors duration-200">About</a>
-                <a href="/case-study.html"
-                    class="text-[18px] text-gray hover:text-[#B2B3BD] transition-colors duration-200">Work</a>
-                <a href="#" class="text-[18px] text-gray hover:text-[#B2B3BD] transition-colors duration-200">Download
-                    CV</a>
-            </div>
-        </div>
-    </nav>
-    <!-- navbar end -->
+    </div>
+</nav>
+<!-- navbar end -->
 
 
 
@@ -74,14 +73,14 @@
        HERO SECTION
   ════════════════════════════════ -->
     <section
-        class="relative min-h-screen flex flex-col items-center justify-start sm:pt-30 pt-27 sm:pb-20 pb-18 overflow-hidden md:pt-[200px] md:pb-[130px]">
+        class="relative md:min-h-screen flex flex-col items-center justify-start sm:pt-30 pt-27 md:pb-35 pb-18 overflow-hidden md:pt-[200px] sm:pb-[130px]">
 
         <!-- Top text block -->
         <div class="text-center px-4 z-10 max-w-232 w-full mx-auto sm:pb-[110px] pb-20 md:pb-[150px]">
 
             <!-- Title -->
             <h1
-                class="hero-title mb-4 lg:text-[90px] md:text-[60px] sm:text-[48px] text-[36px] font-black leading-[1.1]">
+                class="hero-title mb-4 lg:text-[90px] md:text-[60px] sm:text-[48px] text-[36px] font-black leading-[1.1] swipe-reveal" data-swipe-color="#DE4A33">
                 <span class="uppercase text-[#DE4A33]">Crafting</span>
                 <span class="uppercase text-gray">Digital Experiences</span>
             </h1>
@@ -103,8 +102,7 @@
         <div class="relative w-full" id="work">
 
             <!-- Center portrait (absolute, above marquee) -->
-            <div
-                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 sm:max-w-[440px] max-w-[295px] w-full mx-auto h-[344px] sm:h-[490px]">
+            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 md:max-w-[440px] sm:max-w-[340px] max-w-[295px] w-full mx-auto h-[344px] md:h-[490px]">
                 <div class="portrait-ring w-full h-full">
                     <!-- Replace src with your actual photo -->
                     <img src="assets/images/shorifbanner.webp" alt="shorif ahammed" />
@@ -202,7 +200,7 @@
         <div class="container">
             <!-- Section Title -->
             <h2
-                class="title-font md:text-[64px] sm:text-[48px] text-[32px] uppercase md:mb-24 sm:mb-12 mb-6 font-black">
+                class="title-font md:text-[64px] sm:text-[48px] text-[32px] uppercase md:mb-24 sm:mb-12 mb-6 font-black  swipe-reveal" data-swipe-color="#DE4A33">
                 <span style="color:#E8341A">Selected</span>
                 <span style="color:#1a1a1a"> Works</span>
             </h2>
@@ -220,8 +218,7 @@
                     <!-- Content -->
                     <div class="flex flex-col lg:gap-5 sm:gap-2.5 gap-1">
                         <div class="md:space-y-6 space-y-4">
-                            <h3
-                                class="lg:text-[40px] md:text-[36px] text-[28px]  font-semibold text-black leading-[110%]">
+                            <h3 class="lg:text-[40px] md:text-[36px] text-[28px]  font-semibold text-black leading-[110%] swipe-reveal">
                                 BankerPro – Fintech Admin Dashboard
                             </h3>
                             <p class="text-[#404040] lg:text-2xl sm:text-lg text-base  ">
@@ -239,7 +236,7 @@
                                 class="tag lg:py-3 py-2 lg:px-6 px-4 border border-[#CECECE] rounded-[8px] lg:text-2xl sm:text-lg text-base">2026</span>
                         </div>
                         <div class="inline-block lg:mt-9.5 md:mt-7 mt-5">
-                            <a href="#" class="view-link sm:text-lg text-base">View Project
+                            <a href="/case-study-details.html" class="view-link sm:text-lg text-base">View Project
                                 <span>
                                     <img src="assets/images/arrow-right.svg" class="img-fluid" alt="arrow right">
                                 </span>
@@ -259,7 +256,7 @@
                     <div class="flex flex-col lg:gap-5 sm:gap-2.5 gap-1">
                         <div class="md:space-y-6 space-y-4">
                             <h3
-                                class="lg:text-[40px] md:text-[36px] text-[28px]  font-semibold text-black leading-[110%]">
+                                class="lg:text-[40px] md:text-[36px] text-[28px]  font-semibold text-black leading-[110%] swipe-reveal">
                                 BankerPro – Fintech Admin Dashboard
                             </h3>
                             <p class="text-[#404040] lg:text-2xl sm:text-lg text-base  ">
@@ -277,7 +274,7 @@
                                 class="tag lg:py-3 py-2 lg:px-6 px-4 border border-[#CECECE] rounded-[8px] lg:text-2xl sm:text-lg text-base">2026</span>
                         </div>
                         <div class="inline-block lg:mt-9.5 md:mt-7 mt-5">
-                            <a href="#" class="view-link sm:text-lg text-base">View Project
+                            <a href="/case-study-details.html" class="view-link sm:text-lg text-base">View Project
                                 <span>
                                     <img src="assets/images/arrow-right.svg" class="img-fluid" alt="arrow right">
                                 </span>
@@ -297,7 +294,7 @@
                     <div class="flex flex-col lg:gap-5 sm:gap-2.5 gap-1">
                         <div class="md:space-y-6 space-y-4">
                             <h3
-                                class="lg:text-[40px] md:text-[36px] text-[28px]  font-semibold text-black leading-[110%]">
+                                class="lg:text-[40px] md:text-[36px] text-[28px]  font-semibold text-black leading-[110%] swipe-reveal">
                                 BankerPro – Fintech Admin Dashboard
                             </h3>
                             <p class="text-[#404040] lg:text-2xl sm:text-lg text-base  ">
@@ -315,7 +312,7 @@
                                 class="tag lg:py-3 py-2 lg:px-6 px-4 border border-[#CECECE] rounded-[8px] lg:text-2xl sm:text-lg text-base">2026</span>
                         </div>
                         <div class="inline-block lg:mt-9.5 md:mt-7 mt-5">
-                            <a href="#" class="view-link sm:text-lg text-base">View Project
+                            <a href="/case-study-details.html" class="view-link sm:text-lg text-base">View Project
                                 <span>
                                     <img src="assets/images/arrow-right.svg" class="img-fluid" alt="arrow right">
                                 </span>
@@ -339,7 +336,7 @@
                 <div>
                     <!-- Section Title -->
                     <h2
-                        class="title-font md:text-[64px] sm:text-[48px] text-[32px] uppercase md:mb-10 sm:mb-8 mb-6 font-black leading-[113%]">
+                        class="title-font md:text-[64px] sm:text-[48px] text-[32px] uppercase md:mb-10 sm:mb-8 mb-6 font-black leading-[113%]  swipe-reveal" data-swipe-color="#DE4A33">
                         <span style="color:#E8341A">Design</span>
                         <span style="color:#1a1a1a">Philosophy</span>
                     </h2>
@@ -359,7 +356,7 @@
                 </div>
                 <div class="lg:space-y-30.5 md:space-y-20 sm:space-y-15 space-y-8">
                     <div class=" md:pl-10 sm:pl-6 sm:border-l sm:border-[#C7C7C7]">
-                        <h3 class="lg:text-[40px] sm:text-[32px] text-[28px] font-semibold md:mb-8 mb-6">Methodology
+                        <h3 class="lg:text-[40px] sm:text-[32px] text-[28px] font-semibold md:mb-8 mb-6 swipe-reveal">Methodology
                         </h3>
                         <div>
                             <ul class="sm:space-y-6 space-y-4">
@@ -391,7 +388,7 @@
                         </div>
                     </div>
                     <div class=" md:pl-10 sm:pl-6 sm:border-l sm:border-[#C7C7C7]">
-                        <h3 class="lg:text-[40px] sm:text-[32px] text-[28px] font-semibold md:mb-8 mb-6">Core Principles
+                        <h3 class="lg:text-[40px] sm:text-[32px] text-[28px] font-semibold md:mb-8 mb-6 swipe-reveal">Core Principles
                         </h3>
                         <div>
                             <ul class="sm:space-y-6 space-y-4">
@@ -422,9 +419,9 @@
     <!-- Areas of Expertise start -->
     <section class="areas-of-expertise section-padding">
         <div class="container">
-            <div class="max-w-[735px] w-full mx-auto lg:mb-15 sm:mb-10 mb-6">
+            <div class="max-w-[735px] text-center w-full mx-auto lg:mb-15 sm:mb-10 mb-6">
                 <h2
-                    class="title-font md:text-[64px] text-center sm:text-[48px] text-[32px] uppercase md:mb-8 sm:mb-6 mb-4 font-black leading-[113%]">
+                    class="title-font md:text-[64px] text-center sm:text-[48px] text-[32px] uppercase md:mb-8 sm:mb-6 mb-4 font-black leading-[113%]  swipe-reveal" data-swipe-color="#DE4A33">
                     <span style="color:#E8341A">Areas of</span>
                     <span style="color:#1a1a1a"> Expertise</span>
                 </h2>
@@ -432,11 +429,13 @@
                     years of practice across diverse industries and challenging projects</p>
             </div>
             <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-8 md:gap-5 gap-4">
-                <div class="rounded-2xl border-tl">
-                    <div class="bg-white lg:p-8 md:p-6 p-4 rounded-2xl">
+           
+                   <div class="rounded-2xl border-tl">
+                    <div class="bg-white lg:p-8 md:p-6 p-4 rounded-2xl relative z-5">
                         <img src="assets/images/expertise1.svg" class="img-fluid" alt="expertise">
                         <div class="lg:mt-10 md:mt-6 mt-4">
-                            <h3 class="lg:text-2xl text-xl font-semibold text-black md:mb-4 mb-2">Brand & Identity</h3>
+                            <h3 class="lg:text-2xl text-xl font-semibold text-black md:mb-4 mb-2">SBrand & Identity
+                            </h3>
                             <p class="lg:text-lg text-base text-gray">Crafting distinctive visual identities that
                                 capture essence and communicate values. From logo systems to comprehensive brand
                                 guidelines.</p>
@@ -444,7 +443,7 @@
                     </div>
                 </div>
                 <div class="rounded-2xl border-tr">
-                    <div class="bg-white lg:p-8 md:p-6 p-4 rounded-2xl">
+                    <div class="bg-white lg:p-8 md:p-6 p-4 rounded-2xl relative z-5">
                         <img src="assets/images/expertise2.svg" class="img-fluid" alt="expertise">
                         <div class="lg:mt-10 md:mt-6 mt-4">
                             <h3 class="lg:text-2xl text-xl font-semibold text-black md:mb-4 mb-2">Digital Product Design
@@ -455,7 +454,7 @@
                     </div>
                 </div>
                 <div class="rounded-2xl border-tl">
-                    <div class="bg-white lg:p-8 md:p-6 p-4 rounded-2xl">
+                    <div class="bg-white lg:p-8 md:p-6 p-4 rounded-2xl relative z-5">
                         <img src="assets/images/expertise3.svg" class="img-fluid" alt="expertise">
                         <div class="lg:mt-10 md:mt-6 mt-4">
                             <h3 class="lg:text-2xl text-xl font-semibold text-black md:mb-4 mb-2">Strategy & Research
@@ -466,7 +465,7 @@
                     </div>
                 </div>
                 <div class="rounded-2xl border-tr">
-                    <div class="bg-white lg:p-8 md:p-6 p-4 rounded-2xl">
+                    <div class="bg-white lg:p-8 md:p-6 p-4 rounded-2xl relative z-5">
                         <img src="assets/images/expertise4.svg" class="img-fluid" alt="expertise">
                         <div class="lg:mt-10 md:mt-6 mt-4">
                             <h3 class="lg:text-2xl text-xl font-semibold text-black md:mb-4 mb-2">Interaction Design
@@ -477,7 +476,7 @@
                     </div>
                 </div>
                 <div class="rounded-2xl border-tl">
-                    <div class="bg-white lg:p-8 md:p-6 p-4 rounded-2xl">
+                    <div class="bg-white lg:p-8 md:p-6 p-4 rounded-2xl relative z-5">
                         <img src="assets/images/expertise5.svg" class="img-fluid" alt="expertise">
                         <div class="lg:mt-10 md:mt-6 mt-4">
                             <h3 class="lg:text-2xl text-xl font-semibold text-black md:mb-4 mb-2">Brand & Identity</h3>
@@ -487,7 +486,7 @@
                     </div>
                 </div>
                 <div class="rounded-2xl border-tr">
-                    <div class="bg-white lg:p-8 md:p-6 p-4 rounded-2xl">
+                    <div class="bg-white lg:p-8 md:p-6 p-4 rounded-2xl relative z-5">
                         <img src="assets/images/expertise6.svg" class="img-fluid" alt="expertise">
                         <div class="lg:mt-10 md:mt-6 mt-4">
                             <h3 class="lg:text-2xl text-xl font-semibold text-black md:mb-4 mb-2">Design Systems</h3>
@@ -507,7 +506,7 @@
         <div class="container">
             <div class="flex items-center sm:flex-nowrap flex-wrap justify-between sm:gap-5 gap-3 sm:mb-2 mb-8">
                 <h2
-                    class="title-font md:text-[64px] text-start sm:text-[48px] text-[32px] uppercase md:mb-8 sm:mb-6 sm:mb-4 font-black leading-[113%]">
+                    class="title-font md:text-[64px] text-start sm:text-[48px] text-[32px] uppercase md:mb-8 sm:mb-6 sm:mb-4 font-black leading-[113%]  swipe-reveal" data-swipe-color="#DE4A33">
                     <span style="color:#E8341A">The</span>
                     <span style="color:#1a1a1a">Process</span>
                 </h2>
@@ -538,7 +537,7 @@
                         <div class="flex flex-col gap-2">
                             <div class="svc-name-wrap relative overflow-hidden">
                                 <span
-                                    class="svc-name capitalize text-[#000] sm:text-[28px] text-2xl md:text-[40px] duration-500 font-semibold">Research
+                                    class="svc-name capitalize text-[#000] swipe-reveal sm:text-[28px] text-2xl md:text-[40px] duration-500 font-semibold">Research
                                     & Discovery</span>
                                 <span
                                     class="svc-name-reveal absolute inset-0 capitalize sm:text-[28px] text-2xl md:text-[40px] font-semibold text-[#E8341A] pointer-events-none whitespace-nowrap"
@@ -574,7 +573,7 @@
                         <div class="flex flex-col gap-2">
                             <div class="svc-name-wrap relative overflow-hidden">
                                 <span
-                                    class="svc-name capitalize text-[#000] sm:text-[28px] text-2xl md:text-[40px] duration-500 font-semibold">Discovery
+                                    class="svc-name capitalize text-[#000] swipe-reveal sm:text-[28px] text-2xl md:text-[40px] duration-500 font-semibold">Discovery
                                     & Immersion</span>
                                 <span
                                     class="svc-name-reveal absolute inset-0 capitalize sm:text-[28px] text-2xl md:text-[40px] font-semibold text-[#E8341A] pointer-events-none whitespace-nowrap"
@@ -609,7 +608,7 @@
                         <div class="flex flex-col gap-2">
                             <div class="svc-name-wrap relative overflow-hidden">
                                 <span
-                                    class="svc-name capitalize text-[#000] sm:text-[28px] text-2xl md:text-[40px] duration-500 font-semibold">Design
+                                    class="svc-name capitalize text-[#000] swipe-reveal sm:text-[28px] text-2xl md:text-[40px] duration-500 font-semibold">Design
                                     & Prototyping</span>
                                 <span
                                     class="svc-name-reveal absolute inset-0 capitalize sm:text-[28px] text-2xl md:text-[40px] font-semibold text-[#E8341A] pointer-events-none whitespace-nowrap"
@@ -644,7 +643,7 @@
                         <div class="flex flex-col gap-2">
                             <div class="svc-name-wrap relative overflow-hidden">
                                 <span
-                                    class="svc-name capitalize text-[#000] sm:text-[28px] text-2xl md:text-[40px] duration-500 font-semibold">Testing
+                                    class="svc-name capitalize text-[#000] swipe-reveal sm:text-[28px] text-2xl md:text-[40px] duration-500 font-semibold">Testing
                                     & Refinement</span>
                                 <span
                                     class="svc-name-reveal absolute inset-0 capitalize sm:text-[28px] text-2xl md:text-[40px] font-semibold text-[#E8341A] pointer-events-none whitespace-nowrap"
@@ -679,7 +678,7 @@
                         <div class="flex flex-col gap-2">
                             <div class="svc-name-wrap relative overflow-hidden">
                                 <span
-                                    class="svc-name capitalize text-[#000] sm:text-[28px] text-2xl md:text-[40px] duration-500 font-semibold">Handoff
+                                    class="svc-name capitalize text-[#000] swipe-reveal sm:text-[28px] text-2xl md:text-[40px] duration-500 font-semibold">Handoff
                                     & Support</span>
                                 <span
                                     class="svc-name-reveal absolute inset-0 capitalize sm:text-[28px] text-2xl md:text-[40px] font-semibold text-[#E8341A] pointer-events-none whitespace-nowrap"
@@ -704,9 +703,9 @@
     <section class="tst-section section-padding">
 
         <div class="container">
-            <div class="max-w-180 w-full mx-auto lg:mb-15 sm:mb-10 mb-6">
+            <div class="max-w-180 w-full text-center mx-auto lg:mb-15 sm:mb-10 mb-6">
                 <h2
-                    class="title-font md:text-[64px] text-center sm:text-[48px] text-[32px] uppercase md:mb-6 sm:mb-5 mb-4 font-black leading-[113%]">
+                    class="title-font md:text-[64px] text-center sm:text-[48px] text-[32px] uppercase md:mb-6 sm:mb-5 mb-4 font-black leading-[113%]  swipe-reveal">
 
                     <span style="color:#1a1a1a"> Testimonials</span>
                 </h2>
@@ -1157,7 +1156,7 @@
         <div class="container">
             <div class="max-w-275.5 mx-auto">
                 <h2
-                    class="cta-title mb-4 lg:text-[64px] md:text-[52px] sm:text-[42px] text-[36px] font-black text-center leading-tight">
+                    class="cta-title mb-4 lg:text-[64px] md:text-[52px] sm:text-[42px] text-[36px] font-black text-center leading-tight  swipe-reveal" data-swipe-color="#DE4A33">
                     <span class="uppercase text-[#DE4A33]">Let's Create</span>
                     <span class="uppercase text-gray">Something
                         Extraordinary</span>
@@ -1185,136 +1184,88 @@
 
 
 
-    <!-- footer section start -->
-    <footer class="bg-black lg:pt-24 md:pt-15 pt-11 text-white">
-
-        <div class="container">
-            <!-- Main Footer Content -->
-            <div class="lg:pb-12 sm:pb-10 pb-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 lg:gap-8">
-
-                    <!-- Brand Column -->
-                    <div class="flex flex-col md:gap-8 gap-5">
-                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-none  uppercase">
-                            SHORIF<br />AHAMMED
-                        </h2>
-
-                        <!-- Social Icons -->
-                        <div class="flex items-center gap-3">
-
-                            <!-- LinkedIn -->
-                            <a href="#"
-                                class="w-12 h-12 rounded-full  bg-[#262626] flex items-center justify-center hover:bg-[#545454] transition-all duration-300 group">
-                                <img src="assets/images/social1.svg" class="img-fluid" alt="social link">
+ <!-- footer section start -->
+<footer class="footer">
+    <div class="container">
+ 
+        <!-- Main Footer Content -->
+        <div class="footer-content">
+            <div class="footer-grid">
+ 
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <h2>SHORIF<br />AHAMMED</h2>
+ 
+                    <!-- Social Icons -->
+                    <ul class="footer-social">
+                        <li>
+                            <a href="#" aria-label="LinkedIn">
+                                <img src="assets/images/social1.svg" alt="LinkedIn">
                             </a>
-
-                            <!-- Dribbble -->
-                            <a href="#"
-                                class="w-12 h-12 rounded-full bg-[#262626] flex items-center justify-center hover:bg-[#545454] transition-all duration-300 group">
-                                <img src="assets/images/social2.svg" class="img-fluid" alt="social link">
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Dribbble">
+                                <img src="assets/images/social2.svg" alt="Dribbble">
                             </a>
-
-                            <!-- Behance -->
-                            <a href="#"
-                                class="w-12 h-12 rounded-full bg-[#262626] flex items-center justify-center hover:bg-[#545454] transition-all duration-300 group">
-                                <img src="assets/images/social3.svg" class="img-fluid" alt="social link">
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Behance">
+                                <img src="assets/images/social3.svg" alt="Behance">
                             </a>
-
-                            <!-- Instagram -->
-                            <a href="#"
-                                class="w-12 h-12 rounded-full bg-[#262626] flex items-center justify-center hover:bg-[#545454] transition-all duration-300 group">
-                                <img src="assets/images/social4.svg" class="img-fluid" alt="social link">
-
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Instagram">
+                                <img src="assets/images/social4.svg" alt="Instagram">
                             </a>
-
-                        </div>
-                    </div>
-
-                    <!-- Services Column -->
-                    <div>
-                        <h3
-                            class="md:text-2xl sm:text-xl text-lg font-bold uppercase tracking-widest text-white sm:mb-6 mb-5">
-                            Services</h3>
-                        <ul class="flex flex-col gap-4">
-                            <li><a href="#"
-                                    class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">UI
-                                    Design</a></li>
-                            <li><a href="#"
-                                    class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">UX
-                                    Research</a></li>
-                            <li><a href="#"
-                                    class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">Motion
-                                    Design</a></li>
-                            <li><a href="#"
-                                    class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">Brand
-                                    Strategy</a></li>
-                            <li><a href="#"
-                                    class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">Art
-                                    Direction</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Connect Column -->
-                    <div>
-                        <h3
-                            class="md:text-2xl sm:text-xl text-lg font-bold uppercase tracking-widest text-white sm:mb-6 mb-5">
-                            Connect</h3>
-                        <ul class="flex flex-col gap-4">
-                            <li><a href="#"
-                                    class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">LinkedIn</a>
-                            </li>
-                            <li><a href="#"
-                                    class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">Dribbble</a>
-                            </li>
-                            <li><a href="#"
-                                    class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">Behance</a>
-                            </li>
-                            <li><a href="#"
-                                    class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">Instagram</a>
-                            </li>
-                            <li><a href="#"
-                                    class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">Twitter</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Contact Column -->
-                    <div>
-                        <h3
-                            class="md:text-2xl sm:text-xl text-lg font-bold uppercase tracking-widest text-white sm:mb-6 mb-5">
-                            Contact</h3>
-                        <ul class="flex flex-col gap-4">
-                            <li>
-                                <a href="mailto:hello@sharifahammed.com"
-                                    class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base break-all">
-                                    hello@sharifahammed.com
-                                </a>
-                            </li>
-                            <li>
-                                <a href="tel:+15551234567"
-                                    class="text-white/75 hover:text-white transition-colors duration-300 md:text-lg text-base">
-                                    +1 (555) 123-4567
-                                </a>
-                            </li>
-                            <li>
-                                <span class="text-white/75 lg:text-lg text-base">Brooklyn, NY</span>
-                            </li>
-                        </ul>
-                    </div>
-
+                        </li>
+                    </ul>
                 </div>
-            </div>
-
-             <!-- Divider + Copyright -->
-            <div class="">
-                <div class="border-t border-white/20 py-6">
-                    <p class="text-center text-[#BFBFBF] text-sm md:text-lg">© 2026 All Rights Reserved</p>
+ 
+                <!-- Services Column -->
+                <div class="footer-nav-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">UI Design</a></li>
+                        <li><a href="#">UX Research</a></li>
+                        <li><a href="#">Motion Design</a></li>
+                        <li><a href="#">Brand Strategy</a></li>
+                        <li><a href="#">Art Direction</a></li>
+                    </ul>
                 </div>
+ 
+                <!-- Connect Column -->
+                <div class="footer-nav-col">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Dribbble</a></li>
+                        <li><a href="#">Behance</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+ 
+                <!-- Contact Column -->
+                <div class="footer-nav-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:hello@sharifahammed.com">hello@sharifahammed.com</a></li>
+                        <li><a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+                        <li><span>Brooklyn, NY</span></li>
+                    </ul>
+                </div>
+ 
             </div>
         </div>
-
-    </footer>
-    <!-- footer section end -->
+ 
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <p>© 2026 All Rights Reserved</p>
+        </div>
+ 
+    </div>
+</footer>
+<!-- footer section end -->
 
 
 
