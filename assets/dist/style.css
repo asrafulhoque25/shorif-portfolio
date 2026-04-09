@@ -201,9 +201,6 @@
   .pointer-events-none {
     pointer-events: none;
   }
-  .visible {
-    visibility: visible;
-  }
   .absolute {
     position: absolute;
   }
@@ -919,6 +916,11 @@
   .sm\:mt-3 {
     @media (width >= 40rem) {
       margin-top: calc(var(--spacing) * 3);
+    }
+  }
+  .sm\:mt-4 {
+    @media (width >= 40rem) {
+      margin-top: calc(var(--spacing) * 4);
     }
   }
   .sm\:mt-6 {
