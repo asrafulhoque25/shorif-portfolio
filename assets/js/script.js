@@ -58,10 +58,10 @@ if (hamburger && mobileMenu) {
     });
   });
 }
- 
- 
- 
- // ── Button animation ──
+
+
+
+// ── Button animation ──
 document.querySelectorAll('.btn-slide').forEach(btn => {
   const overlay = btn.querySelector('.btn-slide__overlay');
 
@@ -79,7 +79,7 @@ document.querySelectorAll('.btn-slide').forEach(btn => {
     gsap.timeline()
       .to(btn, { scale: 0.93, duration: 0.1, ease: 'power2.in' })
       .to(btn, { scale: 1.05, duration: 0.55, ease: 'elastic.out(1, 0.5)' })
-      .to(btn, { scale: 1,    duration: 0.3,  ease: 'power2.out' });
+      .to(btn, { scale: 1, duration: 0.3, ease: 'power2.out' });
   });
 });
 
@@ -93,7 +93,7 @@ gsap.fromTo('.btn-slide',
 
 
 
-    
+
 // ── process number animation ──
 
 
@@ -263,11 +263,11 @@ setTimeout(runSequence, 600);
 
 
   gsap.to(svg, {
-      rotation: 360,
-  duration: 8,
-  ease: 'none',
-  repeat: -1,
-  transformOrigin: '50% 50%'
+    rotation: 360,
+    duration: 8,
+    ease: 'none',
+    repeat: -1,
+    transformOrigin: '50% 50%'
   });
 
 
@@ -288,7 +288,7 @@ setTimeout(runSequence, 600);
           ease: 'power3.out'
         });
 
-      
+
         gsap.delayedCall(0.4, () => {
           countUp(pctEl, 65, 2.0);
           countUp(customersEl, 12, 1.8);
@@ -296,7 +296,7 @@ setTimeout(runSequence, 600);
         });
       }
     });
-  }, { threshold: 0.25 }); 
+  }, { threshold: 0.25 });
 
   observer.observe(resultSection);
 
@@ -316,80 +316,95 @@ setTimeout(runSequence, 600);
 
 
 
-
-
-
 //text animation
 
-    gsap.registerPlugin(ScrollTrigger);
 
-    document.querySelectorAll('.swipe-reveal').forEach(el => {
+gsap.registerPlugin(ScrollTrigger);
 
-      // Read optional config from data attributes
-      const boxColor   = el.dataset.swipeColor || '#111';
-      const startPoint = el.dataset.swipeStart  || 'top 80%';
+document.querySelectorAll('.swipe-reveal').forEach(el => {
 
-      // Apply custom box color via CSS variable
-      el.style.setProperty('--swipe-color', boxColor);
+  const boxColor = el.dataset.swipeColor || '#111';
+  const startPoint = el.dataset.swipeStart || 'top 90%';
 
-      // Inject the sweeping box element
-      const box = document.createElement('span');
-      box.classList.add('swipe-reveal__box');
-      el.prepend(box);
+  function hexToRgba(hex, alpha) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  }
+  el.style.setProperty('--swipe-color', hexToRgba(boxColor, 0.20));
+  el.style.position = 'relative';
+  el.style.overflow = 'hidden';
 
-      // Wrap the existing content in an inner text span
-      const inner = document.createElement('span');
-      inner.classList.add('swipe-reveal__text');
-      while (el.childNodes.length > 1) {
-        inner.appendChild(el.childNodes[1]);
-      }
-      el.appendChild(inner);
+  // Inject sweeping box
+  const box = document.createElement('span');
+  box.classList.add('swipe-reveal__box');
+  el.prepend(box);
 
-      // Detect optional .swipe-subtitle on the next sibling
-      const subtitle = el.nextElementSibling?.classList.contains('swipe-subtitle')
-        ? el.nextElementSibling
-        : null;
+  // Wrap content in inner span
+  const inner = document.createElement('span');
+  inner.classList.add('swipe-reveal__text');
+  while (el.childNodes.length > 1) {
+    inner.appendChild(el.childNodes[1]);
+  }
+  el.appendChild(inner);
 
-      // Build the GSAP timeline
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: el,
-          start: startPoint,
-          toggleActions: 'play none none none',
-        }
-      });
+  // Detect optional subtitle
+  const subtitle = el.nextElementSibling?.classList.contains('swipe-subtitle')
+    ? el.nextElementSibling
+    : null;
 
-      // Step 1 — box sweeps in from left
-      tl.to(box, {
-        width: '100%',
-        duration: 0.45,
-        ease: 'power2.inOut',
-      });
 
-      // Step 2 — text becomes visible (still hidden behind box)
-      tl.to(inner, {
-        opacity: 1,
-        duration: 0.01,
-      }, '>-0.05');
+  gsap.set(box, { height: '0%', top: '0%', width: '100%', willChange: 'height, top' });
 
-      // Step 3 — box exits to the right, revealing the text
-      tl.to(box, {
-        left: '100%',
-        duration: 0.4,
-        ease: 'power2.inOut',
-      });
 
-      // Step 4 — subtitle fades up (optional)
-      if (subtitle) {
-        tl.to(subtitle, {
-          opacity: 1,
-          y: 0,
-          duration: 0.4,
-          ease: 'power2.out',
-        }, '-=0.1');
-      }
 
-    });
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: el,
+      start: startPoint,
+      toggleActions: 'play none none none',
+    }
+  });
+
+  // Step 1 — box sweeps down
+  tl.to(box, {
+    height: '102%',
+    duration: 0.38,
+    ease: 'power4.inOut',
+  });
+
+
+  tl.set(inner, { opacity: 1 });
+
+
+  tl.to(box, {
+    top: '102%',
+    duration: 0.35,
+    ease: 'power4.inOut',
+  }, '+=0.04');
+
+  // Step 4 — text Y settle (happens during box exit)
+  tl.to(inner, {
+    y: 0,
+    duration: 0.45,
+    ease: 'power3.out',
+  }, '<');               // synced with box exit
+
+
+  if (subtitle) {
+    tl.to(subtitle, {
+      opacity: 1,
+      y: 0,
+      duration: 0.5,
+      ease: 'power3.out',
+    }, '-=0.15');
+  }
+
+});
+
+
+
 
 
 // ── Smooth scroll (Lenis) ──

@@ -2608,15 +2608,15 @@ html.lenis, html.lenis body {
   position: absolute;
   left: 0;
   top: 0;
-  width: 0;
-  height: 100%;
+  width: 100%;
+  height: 0;
   z-index: 2;
   pointer-events: none;
 }
 .swipe-reveal__text {
   position: relative;
   z-index: 1;
-  opacity: 0;
+  opacity: 1;
   display: block;
 }
 .swipe-subtitle {

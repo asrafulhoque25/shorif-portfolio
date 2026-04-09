@@ -1037,27 +1037,25 @@ html.lenis body {
     }
 
     /* Sweeping box — injected by JS automatically */
-    .swipe-reveal__box {
-      background-color: var(--swipe-color, #111);
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 0;
-      height: 100%;
-      z-index: 2;
-      pointer-events: none;
-    }
+   .swipe-reveal__box {
+  background-color: var(--swipe-color, #111);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;  
+  height: 0;
+  z-index: 2;
+  pointer-events: none;
+}
 
-    /* Inner text wrapper — injected by JS automatically */
     .swipe-reveal__text {
       position: relative;
       z-index: 1;
-      opacity: 0;
+      opacity: 1;
       display: block;
     }
 
-    /* Optional subtitle — add class="swipe-subtitle" to the
-       next sibling element after .swipe-reveal */
+
     .swipe-subtitle {
       opacity: 0;
       transform: translateY(8px);
